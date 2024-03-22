@@ -193,7 +193,7 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8.10"
-content-hash = "8c7f0d314de5a20ddc3eb5ed9274734f55e4145fb87d45f51b5dae6bfadcaff7"
+content-hash = "d96c2df2bb4fc618d9c64d4620d2ef25810b7417dd8a66a5027049556014c079"
 
 [metadata.files]
 blinker = [
