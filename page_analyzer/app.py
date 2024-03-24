@@ -14,8 +14,12 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def index():
-    name = "Vasya"
     return render_template(
         'index.html',
-        name=name,
+    )
+
+@app.route('/urls')
+def urls():
+    return render_template(
+        'urls.html',
     )
