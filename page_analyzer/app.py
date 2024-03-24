@@ -18,6 +18,7 @@ def index():
         'index.html',
     )
 
+
 @app.route('/urls')
 def urls():
     return render_template(
