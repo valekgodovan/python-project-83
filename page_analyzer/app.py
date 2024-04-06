@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 from dotenv import load_dotenv
 from flask import render_template, request, redirect
 from . import db
@@ -27,13 +27,23 @@ def urls():
     )
 
 
+@app.route('/urls/<int:id>')
+def urls_id(id):
+    return render_template(
+        'urls_id.html',
+        id=id,
+    )
+
+
 @app.post('/urls')
 def urls_post():
     url = request.form.get('url')
-    if validators.url(url):
+    print(db.is_url_in_db(url, conn))
+    if validators.url(url) and not db.is_url_in_db(url, conn):
         db.insert_url(url, conn)
+    id = 2
 
-    return redirect('/urls', code=302)
+    return redirect(url_for('urls_id', id=id), code=302)
 
 
 if __name__ == '__main__':
