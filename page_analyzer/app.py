@@ -1,10 +1,9 @@
-from flask import Flask, url_for
+from flask import Flask, render_template, request, \
+    redirect, flash, url_for, get_flashed_messages
 from dotenv import load_dotenv
-from flask import render_template, request, redirect, flash, url_for, get_flashed_messages
 from . import db
 import os
 import validators
-import datetime
 
 load_dotenv()
 DATABASE_URL = os.getenv('DATABASE_URL')
@@ -55,6 +54,7 @@ def urls_post():
         id, name, date = db.get_row_from_name_db(url, conn)
         return redirect(url_for('urls_id', id=id), code=302)
     return redirect('/urls', code=302)
+
 
 if __name__ == '__main__':
     app.run()
