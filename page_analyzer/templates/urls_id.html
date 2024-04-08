@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Сайт: https://goog.com</h1>
+<h1>Сайт: {{ name }}</h1>
 
 
 <div class="table-responsive">
@@ -9,15 +9,15 @@
         <tbody>
         <tr>
             <td>ID</td>
-            <td>2</td>
+            <td>{{ id }}</td>
         </tr>
         <tr>
             <td>Имя</td>
-            <td>https://goog.com</td>
+            <td>{{ name }}</td>
         </tr>
         <tr>
             <td>Дата создания</td>
-            <td>2024-04-06</td>
+            <td>{{ date }}</td>
         </tr>
         </tbody>
     </table>
